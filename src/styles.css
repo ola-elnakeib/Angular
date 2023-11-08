@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+.mynav , .sidebar , .crs-name , .crs-rate {
+  background-color: rgba(221, 221, 221, 0.61);
+}
+
+.mynav , .sidebar , .crs-name {
+  color: #bf2222;
+}
+
+.mynav , .sidebar , .course-heading , .Rating-heading , .crs-name , .crs-rate {
+  border-radius: 2px;
+}
+
+
