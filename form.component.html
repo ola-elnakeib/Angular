@@ -1,0 +1,29 @@
+<div class="container my-5">
+  <h1 class="text-center mb-4 text-success">Angular Binding-Form</h1>
+  <form>
+    <div class="mb-4 col-lg-5 d-block mx-auto">
+      <label class="form-label text-success">{{setFirstNameLabel()}}</label>
+      <input type="text" class="form-control" id="input1" [value]="firstNameValue">
+    </div>
+
+    <div class="mb-4 col-lg-5 d-block mx-auto">
+      <label class="form-label text-success">{{lastNameLabel}}</label>
+      <input type="text" class="form-control" id="input2" [value]="setLastNameValue()">
+    </div>
+
+    <div class="mb-4 col-lg-5 d-block mx-auto">
+      <label class="form-label text-success">Age</label>
+      <input type="number" class="form-control" id="input3" value="1">
+    </div>
+
+    <div class="mb-4 col-lg-5 d-block mx-auto">
+      <label class="form-label text-success">City</label>
+      <input type="text" class="form-control" id="input4" [(ngModel)]="textData" name="city">
+      <div class="pt-2">{{textData}}</div>
+    </div>
+
+    <input type="submit" value="Submit" class="btn btn-success col-lg-5 d-block mx-auto fs-4" (click)="showConsole()">
+
+  </form>
+
+</div>
