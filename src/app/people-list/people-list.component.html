@@ -1,0 +1,55 @@
+<div class="container my-5">
+  <h1 class="mb-4 header">People List</h1>
+  <div class="form-wrapper mb-5">
+    <form class="peapleForm">
+      <div class="row mb-3">
+        <div class="col-lg-4 mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" name="name" id="name" class="form-control name" placeholder="Mark" [(ngModel)]="name" />
+        </div>
+        <div class="col-lg-4 mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" name="username" id="username" class="form-control username" placeholder="markotto" [(ngModel)]="username" />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-lg-7">
+          <label for="phone" class="form-label">Phone</label>
+          <input type="text" name="phone" id="phone" class="form-control phone" placeholder="01234567891" [(ngModel)]="phone" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8">
+          <input type="submit" value="Add" class="btn btn-primary text-light add-btn px-4 py-2" (click)="addNewPerson()"/>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="table-wrapper">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Username</th>
+          <th scope="col">Phone</th>
+          <th scope="col" class="text-center">Action</th>
+        </tr>
+      </thead>
+      <tbody class="people-list">
+        <tr *ngFor="let person of peopleList" [id]="person.id">
+          <th scope="row">{{person.id}}</th>
+          <td>{{person.name}}</td>
+          <td>{{person.username}}</td>
+          <td>{{person.phone}}</td>
+          <td class="text-center">
+            <button class="btn btn-primary me-3 btn-details">Details</button>
+            <button class="btn btn-warning me-3 btn-update" (click)="editPersonData(person.id)">Update</button>
+            <button class="btn btn-danger btn-delete" (click)="deletePersonData(person.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
